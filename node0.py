@@ -7,10 +7,7 @@ import pickle
 import os
 import datetime
 from threading import Thread
-IP0 = '127.0.0.1'
-IP1 = '127.0.0.1'
-IP2 = '127.0.0.1'
-IP3 = '127.0.0.1'
+IP = '127.0.0.1'
 global  flag0
 global  flag1 
 global  flag2 
@@ -95,7 +92,7 @@ def send(TCP_IP_SEND, TCP_PORT_SEND):
         flag0 = nd 
         if (nd == 1 and MyId !=0):                         
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.connect((IP0, PORT0))
+            s.connect((IP, PORT0))
             s.send(pack)
             s.close()
         nn = nn/2
@@ -103,7 +100,7 @@ def send(TCP_IP_SEND, TCP_PORT_SEND):
         flag1 = nd
         if (nd == 1 and MyId !=1):
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.connect((IP1, PORT1))
+            s.connect((IP, PORT1))
             s.send(pack)
             s.close()
         nn = nn/2
@@ -111,7 +108,7 @@ def send(TCP_IP_SEND, TCP_PORT_SEND):
         flag2 = nd 
         if (nd == 1 and MyId !=2):
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.connect((IP2, PORT2))
+            s.connect((IP, PORT2))
             s.send(pack)
             s.close()
         nn = nn/2
@@ -119,7 +116,7 @@ def send(TCP_IP_SEND, TCP_PORT_SEND):
         flag3 = nd 
         if (nd == 1 and MyId !=3):
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.connect((IP3, PORT3))
+            s.connect((IP, PORT3))
             s.send(pack)
             s.close()
         continue                
